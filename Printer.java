@@ -17,8 +17,24 @@
 
 public class Printer {
     public static void main(String[] args){
-        Employee person=new Employee("Igor","Dudin");
-        System.out.println(person.getAge());
+        Employee person1=new Employee("Igor","Dudin");
+        Employee person2=new Employee("Kate","Averianova",20,10000);
+        Employee person3=new Employee("Igor","Dudin");
+        Employee person4=new Employee("Petr","Ivanov",35);
+
+        System.out.println(person1);
+        System.out.println(person2);
+        System.out.println(person3);
+        System.out.println(person4);
+
+        System.out.println(person1.equals(person3));
+        System.out.println(person1.equals(person4));
+        System.out.println();
+
+        person4.setAge(55);
+        person4.setLastName("Sidorov");
+
+        System.out.println(person4);
 
     }
     

@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Employee {
     
     private String firstName;
@@ -48,6 +50,27 @@ public class Employee {
         this(firstName,lastName,25,1000);
     }
     
+    @Override
+    public String toString(){
+        return "Person: "+firstName+" "+lastName+"\n"+"Age: "+age+"\n"+"Salary: "+salary+"\n";
+    }
+
+    @Override
+    public boolean equals(Object anotherObject){
+        if (anotherObject==null){
+            return false;
+        }
+        if(!(anotherObject instanceof Employee)){
+            return false;
+        }
+        Employee anotherEmployee=(Employee) anotherObject;
+
+        return firstName.equals(anotherEmployee.firstName)&&lastName.equals(anotherEmployee.lastName);
+    }
+    @Override
+    public hashCode(){
+        return Objects.hash(firstName,lastName);
+    }
     
     
 }
